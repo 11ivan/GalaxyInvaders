@@ -428,8 +428,8 @@ C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj
 C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\resources.en-us.resfiles.intermediate
 C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\bin\x86\Debug\Juego.xbf
-C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Juego.g.i.cs
-C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Juego.g.cs
-C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Juego.xaml
-C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Juego.xbf
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Game.g.i.cs
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Game.g.cs
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Game.xaml
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\obj\x86\Debug\Game.xbf
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\SpaceInvaders\SpaceInvaders\bin\x86\Debug\Game.xbf

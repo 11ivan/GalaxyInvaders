@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="_posX" />
     <RootPropertyPathName Name="splitAbierto" />
     <RootPropertyPathName Name="ComboBoxOption" />
     <RootPropertyPathName Name="mDificultades" />
@@ -16,15 +17,46 @@
       <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="SpaceInvaders.ViewModels.MainPageGameVM" />
+    <RootType FullName="SpaceInvaders.ViewModels.VMGame" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
       <RootProperty Name="RowDefinitions" />
+      <RootEvent Name="Loaded" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="MaxHeight" />
+      <RootProperty Name="MaxWidth" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Child" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
+      <RootProperty Name="MaxHeight" />
+      <RootProperty Name="MaxWidth" />
+      <RootProperty Name="Children" />
+      <RootMethod Name="GetLeft" />
+      <RootMethod Name="SetLeft" />
+      <RootMethod Name="GetTop" />
+      <RootMethod Name="SetTop" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+    </RootType>
+    <RootType FullName="SpaceInvaders.Game" />
+    <RootType FullName="SpaceInvaders.ViewModels.MainPageGameVM" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="Name" />
       <RootProperty Name="IsPaneOpen" />
@@ -34,9 +66,6 @@
       <RootProperty Name="PanePlacement" />
       <RootProperty Name="Pane" />
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
@@ -111,6 +140,7 @@
       <RootProperty Name="Content" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Command" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
       <RootProperty Name="Symbol" />
@@ -133,11 +163,6 @@
       <RootProperty Name="ImageSource" />
       <RootProperty Name="Stretch" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Margin" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
       <RootProperty Name="Background" />
@@ -145,6 +170,7 @@
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Width" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="SpaceInvaders.MainPage" />
   </Roots.RootTypes>
 </Roots>

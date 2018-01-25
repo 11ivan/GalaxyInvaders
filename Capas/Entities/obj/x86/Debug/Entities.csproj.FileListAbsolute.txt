@@ -51,3 +51,4 @@ C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\Capas\Entities\obj\x86\Debug\pr
 C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\Capas\Entities\obj\x86\Debug\qualifiers.txt
 C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\Capas\Entities\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\Capas\Entities\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\Capas\Entities\obj\x86\Debug\Entities.csprojResolveAssemblyReference.cache
