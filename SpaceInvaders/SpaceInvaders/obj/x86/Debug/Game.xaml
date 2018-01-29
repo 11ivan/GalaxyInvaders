@@ -13,9 +13,12 @@
         <vm:VMGame></vm:VMGame>
     </Page.DataContext>
     
-    <Grid x:ConnectionId='1' x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"                             >
-        <Border BorderBrush="Blue" BorderThickness="3" MaxHeight="600" MaxWidth="1000" Margin="10">
-            <Canvas MaxHeight="600" MaxWidth="1000">
+    <Grid x:ConnectionId='1' x:Name="grid" Background="Black"                             >
+        <Border BorderBrush="Green" BorderThickness="3" MaxHeight="600" MaxWidth="1350" Margin="10">
+            <Canvas MaxHeight="600" MaxWidth="1350">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Images/Fondo Space Invaders.jpg" />
+                </Canvas.Background>
                 <Image x:ConnectionId='2' x:Name="player" Source="ms-appx:///Assets/Images/AlienNavePro.png" Height="58" Width="72"
                        Canvas.Left="{Binding _posX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="534"  />
             </Canvas>

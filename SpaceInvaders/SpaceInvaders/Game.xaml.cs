@@ -34,11 +34,6 @@ namespace SpaceInvaders
             vMGame =(VMGame) this.DataContext;
         }     
 
-        /*private void KeyDownEvent(object sender, KeyRoutedEventArgs e)
-        {
-        
-        }*/
-
         /// <summary>
         /// Si este evento no hace caso al KeyDown
         /// </summary>
@@ -47,6 +42,7 @@ namespace SpaceInvaders
         private void allowfocus_Loaded(object sender, RoutedEventArgs e)
         {
             Window.Current.Content.KeyDown += this.vMGame.Grid_KeyDown;
+            Window.Current.Content.KeyUp += this.vMGame.Grid_KeyUp;
         }
 
         private void grid_Unloaded(object sender, RoutedEventArgs e)
