@@ -31,14 +31,22 @@ namespace SpaceInvaders
     {
         public VMGame vMGame { get; }
         public List<NaveEnemiga> listaEnemigos;
+        public List<Image> listaImagenesNavesEnemigas;
+        public DispatcherTimer dispatcherTimer;
+        
 
         public Game()
         {
             this.InitializeComponent();
             listaEnemigos = new List<NaveEnemiga>();
+            listaImagenesNavesEnemigas = new List<Image>();
             vMGame =(VMGame) this.DataContext;
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Interval = new TimeSpan(0,0,0,0,1);
+            dispatcherTimer.Tick += timer_Tick;
             cargaNaves();
-        }
+            dispatcherTimer.Start();
+        }      
 
         //Getter Setter ListaEnemigos
 
@@ -152,10 +160,85 @@ namespace SpaceInvaders
                 Canvas.SetLeft(imagenNave, nave.posX);
 
                 listaEnemigos.Add(nave);
+                listaImagenesNavesEnemigas.Add(imagenNave);
             }          
         }
 
+        //Movimiento naves enemigas
+        private void timer_Tick(object sender, object e)
+        {
+            move();
+        }
 
+        public void move()
+        {
+            Image imagenNave = new Image();
+            NaveEnemiga naveEnemiga = new NaveEnemiga();
+            var childs = this.canvas.Children;
+            int posX;
+
+            naveEnemiga = listaEnemigos.ElementAt(0);
+            posX = naveEnemiga.posX;
+            imagenNave= listaImagenesNavesEnemigas.ElementAt(0);
+            Canvas.SetLeft(imagenNave, posX+ 20);
+            listaEnemigos.ElementAt(0).posX = naveEnemiga.posX+posX;
+
+            /*for (int i=0;i<listaImagenesNavesEnemigas.Count;i++)
+            {
+                //Comprobar posX para ir a la izq o dcha
+                //imagenNave = (Image) childs.ElementAt(i);
+                //BitmapImage bitmap=(BitmapImage) imagenNave.Source;
+
+                naveEnemiga = listaEnemigos.ElementAt(i);
+                Canvas.SetLeft(imagenNave, naveEnemiga.posX + 20);
+
+                switch (bitmap.UriSource.ToString())
+                {
+                    case "ms-appx:///Assets/Images/Alien1Pro.png":
+                    case "ms-appx:///Assets/Images/Alien2Pro.png":
+                    case "ms-appx:///Assets/Images/Alien3Pro.png":
+
+                        naveEnemiga = listaEnemigos.ElementAt(i);
+                        Canvas.SetLeft(imagenNave, naveEnemiga.posX + 20);
+
+                    break;
+                }
+
+               
+            }*/
+
+            /*Double posicionFutura = _player.posicionX + _player.velocidad;
+            if (posicionFutura > 0 && posicionFutura < 1275)
+            {
+                _player.posicionX += _player.velocidad;
+            }
+            NotifyPropertyChanged("player");*/
+        }
+        public void right()
+        {
+            //_velocidad = 10;
+            /*if (_player.posicionX < 1275)
+            {
+                _player.velocidad = 10;
+            }
+            else
+            {
+                _player.velocidad = 0;
+            }*/
+        }
+        public void left()
+        {
+            //_velocidad = -10;
+            /*if (_player.posicionX > 0 && _player.posicionX - 10 > 0)
+            {
+                _player.velocidad = -10;
+            }
+            else
+            {
+                _player.velocidad = 0;
+            }*/
+        }
+        //Fin Movimiento naves enemigas
 
     }
 }
