@@ -14945,20 +14945,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivan\\.nuget\\packages\\": {}
+    "C:\\Users\\icastillo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivan\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Capa-DAL\\Capa-DAL.csproj",
+      "projectUniqueName": "C:\\Users\\icastillo\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Capa-DAL\\Capa-DAL.csproj",
       "projectName": "Capa-DAL",
-      "projectPath": "C:\\Users\\ivan\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Capa-DAL\\Capa-DAL.csproj",
-      "packagesPath": "C:\\Users\\ivan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivan\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Capa-DAL\\obj\\",
+      "projectPath": "C:\\Users\\icastillo\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Capa-DAL\\Capa-DAL.csproj",
+      "packagesPath": "C:\\Users\\icastillo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\icastillo\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Capa-DAL\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\icastillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -14971,8 +14971,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\ivan\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\ivan\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Entities\\Entities.csproj"
+            "C:\\Users\\icastillo\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\icastillo\\Desktop\\GitHub\\GalaxyInvaders\\GalaxyInvaders\\Entities\\Entities.csproj"
             }
           }
         }

@@ -127,27 +127,27 @@ namespace SpaceInvaders
                 if (i>=0 && i<=11)
                 {
                     nave.posY = posY-30;                    
-                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien1Pro.png");
+                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien3.gif");
                 }//Fila 2
                 else if(i>=12 && i<=23)
                 {
-                    nave.posY = posY*2+20 - 30;                    
-                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien2Pro.png");
+                    nave.posY = posY*2-10;                    
+                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien2.gif");
                 }//Fila 3
                 else if (i >= 24 && i <= 35)
                 {
-                    nave.posY = posY *3+20 - 30;                   
-                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien2Pro.png");
+                    nave.posY = posY *3-10;                   
+                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien2.gif");
                 }//Fila 4
                 else if (i >= 36 && i <= 47)
                 {
-                    nave.posY = posY *4+40 - 30;
-                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien3Pro.png");
+                    nave.posY = posY *4+10;
+                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien1.gif");
                 }
                 else //Fila 5
                 {
-                    nave.posY = posY*5+60 - 30;
-                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien3Pro.png");
+                    nave.posY = posY*5+30;
+                    nave.imagen = new Uri("ms-appx:///Assets/Images/Alien1.gif");
                 }
 
                 //Actualizamos valor de posX
@@ -160,6 +160,7 @@ namespace SpaceInvaders
                 Canvas.SetTop(imagenNave, nave.posY);
                 Canvas.SetLeft(imagenNave, nave.posX);
 
+                nave.dirX = 1;
                 listaEnemigos.Add(nave);
                 listaImagenesNavesEnemigas.Add(imagenNave);
             }          
@@ -171,59 +172,123 @@ namespace SpaceInvaders
             move();
         }
 
-        public void move()
+       public void move()
+         {
+             Image imagenNave = new Image();
+             NaveEnemiga naveEnemiga = new NaveEnemiga();
+             int moveX=2;
+             //int direccion = 0;//1 derecha, 2 Izquierda
+
+             for (int i=0;i<listaImagenesNavesEnemigas.Count;i++)
+             {
+                 //Todas las naves no llegan hasta el final
+
+                 //Comprobar posX para ir a la izq o dcha
+                 naveEnemiga = listaEnemigos.ElementAt(i);
+                 imagenNave = listaImagenesNavesEnemigas.ElementAt(i);
+
+                if ((naveEnemiga.posX + (37 + moveX)) >= 1350)//Borde derecho
+                 {
+                    naveEnemiga.dirX = 2;
+                    aumentaPosY(i, imagenNave, naveEnemiga);
+                }
+                 else if ((naveEnemiga.posX - moveX) <= 0)//Borde izquierdo
+                 {
+                    naveEnemiga.dirX= 1;
+                    aumentaPosY(i, imagenNave, naveEnemiga);
+                 }
+
+                 imagenNave = listaImagenesNavesEnemigas.ElementAt(i);
+                 if (naveEnemiga.dirX==1)//Borde derecho
+                 {
+                     naveEnemiga.posX = naveEnemiga.posX + moveX;
+                     Canvas.SetLeft(imagenNave, naveEnemiga.posX);
+                 }
+                 else if(naveEnemiga.dirX==2)//Borde izquierdo
+                 {
+                     naveEnemiga.posX = naveEnemiga.posX - moveX;
+                     Canvas.SetLeft(imagenNave, naveEnemiga.posX);
+                 }
+                 listaEnemigos.ElementAt(i).dirX = naveEnemiga.dirX;
+                 listaEnemigos.ElementAt(i).posX = naveEnemiga.posX;
+             }          
+         }
+
+        public void aumentaPosY(int posicionNave, Image imagenNave, NaveEnemiga naveEnemiga)
+        {
+            listaEnemigos.ElementAt(posicionNave).posY = listaEnemigos.ElementAt(posicionNave).posY + 10;
+            Canvas.SetTop(imagenNave, naveEnemiga.posY);
+        }
+
+        /*public void moveRight()
         {
             Image imagenNave = new Image();
             NaveEnemiga naveEnemiga = new NaveEnemiga();
-            var childs = this.canvas.Children;
-            int moveX=2;
+            //var childs = this.canvas.Children;
+            int moveX = 2;
+            int direccion = 0;//1 derecha, 2 Izquierda
 
-            for (int i=0;i<listaImagenesNavesEnemigas.Count;i++)
+            for (int i = 0; i < listaImagenesNavesEnemigas.Count; i++)
             {
                 //Todas las naves no llegan hasta el final
 
                 //Comprobar posX para ir a la izq o dcha
                 naveEnemiga = listaEnemigos.ElementAt(i);
-                naveEnemiga.posX = naveEnemiga.posX + moveX;
+                //naveEnemiga.posX = naveEnemiga.posX + moveX;
 
                 imagenNave = listaImagenesNavesEnemigas.ElementAt(i);
-                
-                Canvas.SetLeft(imagenNave, naveEnemiga.posX);
 
+                if ((naveEnemiga.posX + (37 + moveX)) <= 1350)//Borde derecho
+                {
+                    naveEnemiga.posX = naveEnemiga.posX + moveX;
+                    Canvas.SetLeft(imagenNave, naveEnemiga.posX);
+                }
+
+                
                 listaEnemigos.ElementAt(i).posX = naveEnemiga.posX;
             }
+        }
 
-            /*Double posicionFutura = _player.posicionX + _player.velocidad;
-            if (posicionFutura > 0 && posicionFutura < 1275)
-            {
-                _player.posicionX += _player.velocidad;
-            }
-            NotifyPropertyChanged("player");*/
-        }
-        public void right()
+        public void moveLeft()
         {
-            //_velocidad = 10;
-            /*if (_player.posicionX < 1275)
+            Image imagenNave = new Image();
+            NaveEnemiga naveEnemiga = new NaveEnemiga();
+            //var childs = this.canvas.Children;
+            int moveX = 2;
+            int direccion = 0;//1 derecha, 2 Izquierda
+
+            for (int i = 0; i < listaImagenesNavesEnemigas.Count; i++)
             {
-                _player.velocidad = 10;
+                //Todas las naves no llegan hasta el final
+
+                //Comprobar posX para ir a la izq o dcha
+                naveEnemiga = listaEnemigos.ElementAt(i);
+                //naveEnemiga.posX = naveEnemiga.posX + moveX;
+
+                if ((naveEnemiga.posX + (37 + moveX)) <= 1350)//Borde derecho
+                {
+                    direccion = 1;
+                }
+                else if ((naveEnemiga.posX - moveX) >= 0)//Borde izquierdo
+                {
+                    direccion = 2;
+                }
+
+                imagenNave = listaImagenesNavesEnemigas.ElementAt(i);
+                if (direccion == 1)//Borde derecho
+                {
+                    //moveX = 2;
+                    naveEnemiga.posX = naveEnemiga.posX + moveX;
+                    Canvas.SetLeft(imagenNave, naveEnemiga.posX);
+                }
+                else if (direccion == 2)//Borde izquierdo
+                {
+                    naveEnemiga.posX = naveEnemiga.posX - moveX;
+                    Canvas.SetLeft(imagenNave, naveEnemiga.posX);
+                }
+                listaEnemigos.ElementAt(i).posX = naveEnemiga.posX;
             }
-            else
-            {
-                _player.velocidad = 0;
-            }*/
-        }
-        public void left()
-        {
-            //_velocidad = -10;
-            /*if (_player.posicionX > 0 && _player.posicionX - 10 > 0)
-            {
-                _player.velocidad = -10;
-            }
-            else
-            {
-                _player.velocidad = 0;
-            }*/
-        }
+        }*/
         //Fin Movimiento naves enemigas
 
     }
