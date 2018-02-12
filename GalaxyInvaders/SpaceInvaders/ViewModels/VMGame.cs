@@ -59,7 +59,7 @@ namespace SpaceInvaders.ViewModels
 
         public VMGame()
         {
-            _player = new NaveAmiga(new Uri("ms-appx:///Assets/Images/PlayerPro.png"),"Visible",50,639);
+            _player = new NaveAmiga(new Uri("ms-appx:///Assets/Images/PlayerPro.png"),1, 1, 1, 1, 50,639);
             _posYMisil = 540;
             NotifyPropertyChanged("player");
             NotifyPropertyChanged("posYMisil");

@@ -532,11 +532,26 @@
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\Capa-BL\bin\x86\Debug\Capa-DAL.dll">
       <PackagePath>Capa-DAL.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\A.gif">
+      <PackagePath>Assets\Images\A.gif</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien1.gif">
       <PackagePath>Assets\Images\Alien1.gif</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien2.gif">
+      <PackagePath>Assets\Images\Alien2.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien3.gif">
+      <PackagePath>Assets\Images\Alien3.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\D.gif">
+      <PackagePath>Assets\Images\D.gif</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\explosion.gif">
       <PackagePath>Assets\Images\explosion.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\M.gif">
+      <PackagePath>Assets\Images\M.gif</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\MisilEnemigoPro.png">
       <PackagePath>Assets\Images\MisilEnemigoPro.png</PackagePath>

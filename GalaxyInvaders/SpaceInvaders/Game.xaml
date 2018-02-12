@@ -14,12 +14,17 @@
     </Page.DataContext>
 
     <Grid x:Name="grid" Background="Black" Loaded="allowfocus_Loaded"  >
+        <RelativePanel>
+            <Image x:Name="vida1" Width="70" Height="70" Margin="20 20 0 0" Source="ms-appx:///Assets/Images/D.gif" Opacity="{Binding player.vida1, Mode=TwoWay}"  />
+            <Image x:Name="vida2" Width="70" Height="70" Margin="10 20 0 0" Source="ms-appx:///Assets/Images/A.gif" Opacity="{Binding player.vida2, Mode=TwoWay}" RelativePanel.RightOf="vida1" />
+            <Image x:Name="vida3" Width="70" Height="70" Margin="10 20 0 0" Source="ms-appx:///Assets/Images/M.gif" Opacity="{Binding player.vida3, Mode=TwoWay}" RelativePanel.RightOf="vida2" />
+        </RelativePanel>
         <Border BorderBrush="Green" BorderThickness="3" MaxHeight="600" MaxWidth="1350" Margin="10">
             <Canvas x:Name="canvas" MaxHeight="600" MaxWidth="1350">
                 <Canvas.Background>
                     <ImageBrush ImageSource="ms-appx:///Assets/Images/Fondo Space Invaders.jpg" />
                 </Canvas.Background>
-                <Image x:Name="player" Source="{Binding player.imagen}" Height="58" Width="72" Visibility="{Binding player.visible,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                <Image x:Name="player" Source="{Binding player.imagen}" Height="58" Width="72" Opacity="{Binding player.visible,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                        Canvas.Left="{Binding player.posicionX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="534"  />
             </Canvas>
         </Border>
