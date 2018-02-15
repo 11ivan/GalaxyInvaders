@@ -18,6 +18,7 @@ using Windows.UI.Core;
 using SpaceInvaders.Models;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Threading.Tasks;
+using Entities;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -32,10 +33,16 @@ namespace SpaceInvaders
         public Image imagenEnemiga;
         public List<NaveEnemiga> listaEnemigos;
         public List<Image> listaImagenesNavesEnemigas;
+        public int cantidadNaves;
         //private bool haPulsado;
         //private bool haLevantado;
         public DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer timerDisparoEnemigo = new DispatcherTimer();
+        public ContentDialog hasGanadoContentDialog = new ContentDialog();
+        public Boolean noDispares = false;
+        public Boolean haGanado = false;
+        public Boolean haPulsadoEspacio = false;
+        
         //private bool estaDisparando;
 
         public Game()
@@ -47,7 +54,7 @@ namespace SpaceInvaders
             this.InitializeComponent();
             cargaNaves();
             //Window.Current.Content.KeyDown += KeyDownEvent;
-
+            cantidadNaves = 60;
             vMGame = (VMGame)this.DataContext;
 
             //vMGame.canvas = this.canvas;
@@ -78,9 +85,9 @@ namespace SpaceInvaders
         private void allowfocus_Loaded(object sender, RoutedEventArgs e)
         {
             Window.Current.Content.KeyDown += this.vMGame.Grid_KeyDown;
-            //Window.Current.Content.KeyDown += Disparo_KeyDown;
-            Window.Current.Content.KeyUp += this.vMGame.Grid_KeyUp;
-            Window.Current.Content.KeyUp += Disparo_KeyUp;
+            Window.Current.Content.KeyDown += Disparo_KeyDown;
+            Window.Current.Content.KeyUp += this.vMGame.Grid_KeyUp;//Para el movimiento de nuestra nave
+            Window.Current.Content.KeyUp += Disparo_KeyUp;//Para el disparo de nuestra nave
             //Window.Current.Content.KeyUp += Disparo_KeyUp;
         }
 
@@ -88,7 +95,7 @@ namespace SpaceInvaders
 
         private void Disparo_KeyUp(object sender, KeyRoutedEventArgs e)
         {
-            if (e.Key == VirtualKey.Space)
+            if (e.Key == VirtualKey.Space && !noDispares)
             {
                 //haLevantado = true;
                 disparar();
@@ -99,11 +106,10 @@ namespace SpaceInvaders
         {
             if (e.Key == VirtualKey.Space)
             {
-                //haPulsado = true;
-                disparar();
-                //estaDisparando = true;
+                haPulsadoEspacio = true;
             }
         }
+
         private async void moveBullet(int velocidad, Image playerBullet)
         {
             while (this.canvas.Children.Contains(playerBullet))
@@ -125,20 +131,67 @@ namespace SpaceInvaders
         {
             if (this.canvas.Children.Contains(listaImagenesNavesEnemigas.ElementAt(i)))
             {
-                if (Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetTop(playerBullet) && Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) + 30 >= Canvas.GetTop(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetLeft(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) + 38 >= Canvas.GetLeft(playerBullet))
+                if (this.listaEnemigos.ElementAt(i).puedeSerGolpeado)
                 {
-                    this.canvas.Children.Remove(playerBullet);
-                    listaImagenesNavesEnemigas.ElementAt(i).Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/explosion.gif"));
-                    await Task.Delay(500);
-                    this.canvas.Children.Remove(listaImagenesNavesEnemigas.ElementAt(i));
+                    if (Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetTop(playerBullet) && Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) + 30 >= Canvas.GetTop(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetLeft(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) + 38 >= Canvas.GetLeft(playerBullet))
+                    {
+                        cantidadNaves--;
+                        this.listaEnemigos.ElementAt(i).puedeSerGolpeado = false;
+                        this.vMGame.jugador.Puntuacion = this.vMGame.jugador.Puntuacion + listaEnemigos.ElementAt(i).valor;
+                        listaEnemigos.ElementAt(i).valor = 0;
+                        this.puntuacion.Text = Convert.ToString(this.vMGame.jugador.Puntuacion);
+                        this.canvas.Children.Remove(playerBullet);
+                        listaImagenesNavesEnemigas.ElementAt(i).Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/explosion.gif"));
+                        await Task.Delay(500);
+                        this.canvas.Children.Remove(listaImagenesNavesEnemigas.ElementAt(i));
 
-                    //Marcamos la nave enemiga como que no puede disparar
-                    listaEnemigos.ElementAt(i).puedeDisparar = false;
+                        //Marcamos la nave enemiga como que no puede disparar
+                        listaEnemigos.ElementAt(i).puedeDisparar = false;
+                        if (cantidadNaves == 0 && !haGanado)
+                        {
 
-                    siguienteNaveQuePuedeDisparar(i);
+
+                            //Paramos los timer
+                            timer.Stop();
+                            timerDisparoEnemigo.Stop();
+                            noDispares = true;
+                            haGanado = true;
+                            mostrarGanador();
+
+                        }
+                        siguienteNaveQuePuedeDisparar(i);
+                    }
                 }
             }
         }
+        private async void mostrarGanador()
+        {
+            //ContentDialog hasGanado = new ContentDialog();
+            hasGanadoContentDialog.Title = "Victoria!!";
+            hasGanadoContentDialog.Content = "Enhorabuena, has hecho " + this.vMGame.jugador.Puntuacion+" puntos";
+            hasGanadoContentDialog.PrimaryButtonText = "Submit Score";
+            //hasGanadoContentDialog.IsFocusEngaged=false;
+            //hasGanadoContentDialog.AllowFocusOnInteraction = false;
+            //var buttonSpace = (Button) Window.Current.CoreWindow.GetKeyState(VirtualKey.Space);
+
+           
+
+            ContentDialogResult resultado= await hasGanadoContentDialog.ShowAsync();
+            //hasGanadoContentDialog.Focus(FocusState.Unfocused);
+            //hasGanadoContentDialog.IsTapEnabled = false;
+
+            //hasGanadoContentDialog.IsFocusEngagementEnabled = false;
+            //hasGanadoContentDialog.AllowFocusOnInteraction = false;
+            /*var buttonSpace = (Button)FocusManager.GetFocusedElement();
+            buttonSpace.IsFocusEngagementEnabled = false;*/
+            
+            if (resultado == ContentDialogResult.Primary /*&& !haPulsadoEspacio*/)
+            {
+                this.vMGame.submitScore();
+                this.Frame.Navigate(typeof(MainPage));
+            }
+        }
+
 
         public void siguienteNaveQuePuedeDisparar(int indiceNave)
         {
@@ -246,16 +299,6 @@ namespace SpaceInvaders
             Canvas.SetLeft(playerBullet, disparo.dirX);
             this.canvas.Children.Add(playerBullet);
             moveBulletEnemigo(disparo.velocidad, playerBullet);
-
-            /*Disparo disparo = new Disparo(vMGame.posYMisil, vMGame.player.posicionX, 20, 10, new Uri("ms-appx:///Assets/Images/MisilEnemigoPro.png"));
-            Image playerBullet = new Image();
-            playerBullet.Source = new BitmapImage(disparo.imagen);
-            playerBullet.Height = 20;
-            playerBullet.Width = 10;
-            Canvas.SetTop(playerBullet, Canvas.GetTop(this.player));
-            Canvas.SetLeft(playerBullet, Canvas.GetLeft(this.player) + 35);
-            this.canvas.Children.Add(playerBullet);
-            moveBullet(disparo.velocidad, playerBullet);*/
         }
 
         private async void moveBulletEnemigo(int velocidad, Image enemyBullet)
@@ -284,18 +327,25 @@ namespace SpaceInvaders
 
                         if (vMGame.player.vidas==0)
                         {
-                            //
                             this.player.Opacity = 0;                           
                             timer.Stop();
                             timerDisparoEnemigo.Stop();
 
-                            //Mostrar mensaje 
+                            //Mostrar mensaje para reiniciar partida
 
                         }
                         else
                         {                           
                             this.player.Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/PlayerPro.png"));
                         }                       
+                    }else if (Canvas.GetTop(enemyBullet)+20>=600)//Eliminar Disparo del canvas
+                    {//SETA ATOMICA
+                        enemyBullet.Source= new BitmapImage(new Uri("ms-appx:///Assets/Images/ExplosionMisil.gif"));
+                        enemyBullet.Width = 50;
+                        enemyBullet.Height = 50;
+                        enemyBullet.Margin = new Thickness(0,0,100,100);
+                        await Task.Delay(500);
+                        this.canvas.Children.Remove(enemyBullet);
                     }
                 }
             }
@@ -316,12 +366,11 @@ namespace SpaceInvaders
 
                 case 0:
                     vMGame.player.vida1 = 0;
-
                 break;
             }
         }
 
-
+        
         private void cargaNaves()
         {
             NaveEnemiga nave = null;
@@ -332,6 +381,7 @@ namespace SpaceInvaders
             for (int i = 0; i < 60; i++)
             {
                 nave = new NaveEnemiga();
+                nave.puedeSerGolpeado = true;
                 imagenNave = new Image();
                 if (i == 0 || i == 12 || i == 24 || i == 36 || i == 48)
                 {
@@ -444,8 +494,13 @@ namespace SpaceInvaders
             Canvas.SetTop(imagenNave, naveEnemiga.posY);
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
 
-
+            var parameters = (Jugador)e.Parameter;
+            this.vMGame.jugador=parameters;
+        }
 
 
 
