@@ -15,9 +15,7 @@
     </Page.DataContext>
 
     <Page.Resources>
-        <Style TargetType="ContentDialog">
-            <Setter Property="Focus" />
-        </Style>
+       
     </Page.Resources>
 
     <Grid x:Name="grid" Background="Black" Loaded="allowfocus_Loaded"  >
@@ -27,9 +25,8 @@
             <Image x:Name="vida3" Width="70" Height="70" Margin="10 20 0 0" Source="ms-appx:///Assets/Images/M.gif" Opacity="{Binding player.vida3, Mode=TwoWay}" RelativePanel.RightOf="vida2" />
             <TextBlock Name="txtpuntuacion" Text="SCORE: " Margin="0 30 10 0" FontFamily="Assets\Pixel_Emulator.ttf#Pixel Emulator" Foreground="Green" RelativePanel.LeftOf="puntuacion" FontSize="60"/>
             <TextBlock Name="puntuacion" Text="{Binding puntuacion,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0 30 200 0" FontFamily="Assets\Pixel_Emulator.ttf#Pixel Emulator" Foreground="Green" RelativePanel.AlignRightWithPanel="True" FontSize="60"/>
-
         </RelativePanel>
-        <Border BorderBrush="Green" BorderThickness="3" MaxHeight="600" MaxWidth="1350" Margin="10">
+        <Border x:Name="borderCanvas" BorderBrush="Green" BorderThickness="3" MaxHeight="600" MaxWidth="1350" Margin="10">
             <Canvas x:Name="canvas" MaxHeight="600" MaxWidth="1350">
                 <Canvas.Background>
                     <ImageBrush ImageSource="ms-appx:///Assets/Images/Fondo Space Invaders.jpg" />
@@ -38,6 +35,11 @@
                        Canvas.Left="{Binding player.posicionX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="534"  />
             </Canvas>
         </Border>
+        <RelativePanel x:Name="relativeBotonesTactiles">
+            <Image x:Name="btnIzq" Width="100"  PointerPressed="{x:Bind vMGame.btnPointerPressed}" PointerExited="{x:Bind vMGame.btnPointerExited}"  Source="ms-appx:///Assets/Images/options.png" Margin="300 0 0 100"  RelativePanel.AlignBottomWithPanel="True"  />
+            <Image x:Name="btnDcha" Width="100" PointerPressed="{x:Bind vMGame.btnPointerPressed}" PointerExited="{x:Bind vMGame.btnPointerExited}" Source="ms-appx:///Assets/Images/options.png"  Margin="50 0 0 100" RelativePanel.RightOf="btnIzq" RelativePanel.AlignBottomWithPanel="True" />
+            <Image x:Name="btnDisparo" Width="100" PointerPressed="{x:Bind vMGame.btnDisparo_PointerPressed}" PointerExited="{x:Bind vMGame.btnDisparo_PointerExited}" Source="ms-appx:///Assets/Images/options.png" Margin="0 0 400 100" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" />
+        </RelativePanel>
         <!--<TextBox x:Name="text" KeyDown="text_KeyDown" />-->
     </Grid>
 </Page>
