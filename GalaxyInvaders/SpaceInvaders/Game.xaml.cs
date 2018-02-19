@@ -19,6 +19,7 @@ using SpaceInvaders.Models;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Threading.Tasks;
 using Entities;
+using Windows.UI.ViewManagement;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -65,6 +66,15 @@ namespace SpaceInvaders
             timerDisparoEnemigo.Interval = new TimeSpan(0, 0, 0, 2, 0);
             timerDisparoEnemigo.Tick += tickDisparoEnemigo;
             timerDisparoEnemigo.Start();
+
+            //ElementSoundPlayerState.
+           //Si esta en modo tactil
+            if (UIViewSettings.GetForCurrentView().UserInteractionMode != UserInteractionMode.Touch)
+            {             
+                this.relativeBotonesTactiles.Children.Remove(this.btnIzq);
+                this.relativeBotonesTactiles.Children.Remove(this.btnDcha);
+                this.relativeBotonesTactiles.Children.Remove(this.btnDisparo);
+            }
         }
 
         private void tickDisparoEnemigo(object sender, object e)
@@ -88,17 +98,15 @@ namespace SpaceInvaders
             Window.Current.Content.KeyDown += Disparo_KeyDown;
             Window.Current.Content.KeyUp += this.vMGame.Grid_KeyUp;//Para el movimiento de nuestra nave
             Window.Current.Content.KeyUp += Disparo_KeyUp;//Para el disparo de nuestra nave
-            
-            //Eventos ponterPressed del ViewModel
-            /*this.btnIzq.PointerPressed += this.vMGame.btnDcha_PointerPressed;
-            this.btnDcha.PointerPressed += this.vMGame.btnIzq_PointerPressed;
-            this.btnDisparo.PointerPressed += this.vMGame.btnDisparo_PointerPressed;
+        }  
 
-            this.btnIzq.PointerExited += this.vMGame.btnDcha_PointerExited;
-            this.btnDcha.PointerExited += this.vMGame.btnIzq_PointerExited;
-            this.btnDisparo.PointerExited += this.vMGame.btnDisparo_PointerExited;*/
-
-            //Window.Current.Content.KeyDown += this.vMGame.Grid_KeyDown;
+        public void btnDisparo_PointerExited(object sender, PointerRoutedEventArgs e)//
+        {
+            Image image = (Image)sender;
+            if(image.Name.Equals("btnDisparo") && !noDispares)
+            {
+                disparar();
+            }
         }
 
         private void Disparo_KeyUp(object sender, KeyRoutedEventArgs e)
@@ -510,6 +518,8 @@ namespace SpaceInvaders
             this.vMGame.jugador=parameters;
         }
 
-       
+        
+
+
     }
 }

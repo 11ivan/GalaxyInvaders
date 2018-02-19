@@ -114,7 +114,6 @@ namespace SpaceInvaders.ViewModels
                 right();
                 dispatcherTimer.Start();              
             }
-
         }
         public void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
         {
@@ -165,81 +164,42 @@ namespace SpaceInvaders.ViewModels
 
 
         //Eventos Botones tactiles
-        /*public void btnIzq_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            left();
-            dispatcherTimer.Start();            
-        }
-
-        public void btnDcha_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            right();
-            dispatcherTimer.Start();
-        }*/
-
         public void btnPointerPressed(object sender, PointerRoutedEventArgs e)//
         {
-            /*if (e.Key == VirtualKey.A)//Comprobar qué boton es el que llega
+            Image image = (Image)sender;
+            if (image.Name.Equals("btnIzq"))//Comprobar qué boton es el que llega
             {
                 left();
                 dispatcherTimer.Start();
             }
 
-            if (e.Key == VirtualKey.D)
+            if (image.Name.Equals("btnDcha"))
             {
                 right();
                 dispatcherTimer.Start();
-            }*/
+            }
         }
         public void btnPointerExited(object sender, PointerRoutedEventArgs e)
         {
-            dispatcherTimer.Stop();
-        }
-
-        /*public void btnIzq_PointerExited(object sender, PointerRoutedEventArgs e)
-        {
-            dispatcherTimer.Stop();
-        }
-
-        public void btnDcha_PointerExited(object sender, PointerRoutedEventArgs e)
-        {
-            dispatcherTimer.Stop();
-        }*/
-
-
-        public void btnDisparo_PointerPressed(object sender, PointerRoutedEventArgs e)//
-        {
-            right();
-            dispatcherTimer.Start();
-        }
-        public void btnDisparo_PointerExited(object sender, PointerRoutedEventArgs e)//
-        {
-            dispatcherTimer.Stop();
-        }
-
-
-        /* public void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
-            if (e.Key == VirtualKey.A)
-            {
-                left();
-                dispatcherTimer.Start();
-            }
-
-            if (e.Key == VirtualKey.D)
-            {
-                right();
-                dispatcherTimer.Start();              
-            }
-
-        }
-        public void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
-        {
-            if (e.Key == VirtualKey.A || e.Key == VirtualKey.D)
+            Image image = (Image)sender;
+            if (image.Name.Equals("btnIzq") || image.Name.Equals("btnDcha"))//Comprobar qué boton es el que llega
             {
                 dispatcherTimer.Stop();
             }
+        }
+
+
+       /* public void btnDisparo_PointerPressed(object sender, PointerRoutedEventArgs e)//
+        {
+            //right();
+            //dispatcherTimer.Start();
         }*/
+       /* public void btnDisparo_PointerExited(object sender, PointerRoutedEventArgs e)//
+        {
+            //dispatcherTimer.Stop();
+        }*/
+
+
 
     }
 }

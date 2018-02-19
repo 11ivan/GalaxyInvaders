@@ -35,10 +35,10 @@
                        Canvas.Left="{Binding player.posicionX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="534"  />
             </Canvas>
         </Border>
-        <RelativePanel x:Name="relativeBotonesTactiles">
-            <Image x:Name="btnIzq" Width="100"  PointerPressed="{x:Bind vMGame.btnPointerPressed}" PointerExited="{x:Bind vMGame.btnPointerExited}"  Source="ms-appx:///Assets/Images/options.png" Margin="300 0 0 100"  RelativePanel.AlignBottomWithPanel="True"  />
-            <Image x:Name="btnDcha" Width="100" PointerPressed="{x:Bind vMGame.btnPointerPressed}" PointerExited="{x:Bind vMGame.btnPointerExited}" Source="ms-appx:///Assets/Images/options.png"  Margin="50 0 0 100" RelativePanel.RightOf="btnIzq" RelativePanel.AlignBottomWithPanel="True" />
-            <Image x:Name="btnDisparo" Width="100" PointerPressed="{x:Bind vMGame.btnDisparo_PointerPressed}" PointerExited="{x:Bind vMGame.btnDisparo_PointerExited}" Source="ms-appx:///Assets/Images/options.png" Margin="0 0 400 100" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" />
+        <RelativePanel x:Name="relativeBotonesTactiles" >
+            <Image x:Name="btnIzq" Width="100"  PointerPressed="{x:Bind vMGame.btnPointerPressed}" PointerExited="{x:Bind vMGame.btnPointerExited}"  Source="ms-appx:///Assets/Images/options.png" Margin="300 0 0 30"  RelativePanel.AlignBottomWithPanel="True"  />
+            <Image x:Name="btnDcha" Width="100" PointerPressed="{x:Bind vMGame.btnPointerPressed}" PointerExited="{x:Bind vMGame.btnPointerExited}" Source="ms-appx:///Assets/Images/options.png"  Margin="50 0 0 30" RelativePanel.RightOf="btnIzq" RelativePanel.AlignBottomWithPanel="True" />
+            <Image x:Name="btnDisparo" Width="100" Source="ms-appx:///Assets/Images/options.png" Margin="0 0 400 30" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" PointerExited="btnDisparo_PointerExited" />
         </RelativePanel>
         <!--<TextBox x:Name="text" KeyDown="text_KeyDown" />-->
     </Grid>
