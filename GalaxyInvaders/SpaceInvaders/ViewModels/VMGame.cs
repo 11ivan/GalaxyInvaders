@@ -20,6 +20,7 @@ namespace SpaceInvaders.ViewModels
         private Double _posYMisil;
         private Jugador _jugador;
         private string _puntuacion;
+        private double _opacidadPausa;
         private DispatcherTimer dispatcherTimer { get; set; }
         //private Canvas _canvas;
         #endregion
@@ -35,6 +36,18 @@ namespace SpaceInvaders.ViewModels
                 _canvas = value;
             }
         }*/
+        public double opacidadPausa
+        {
+            get
+            {
+                return _opacidadPausa;
+            }
+            set
+            {
+                _opacidadPausa = value;
+                NotifyPropertyChanged("opacidadPausa");
+            }
+        }
         public string puntuacion
         {
             get
@@ -89,11 +102,15 @@ namespace SpaceInvaders.ViewModels
         {
             _player = new NaveAmiga(new Uri("ms-appx:///Assets/Images/PlayerPro.png"),1, 1, 1, 1, 50,639);
             _posYMisil = 540;
+            _opacidadPausa = 0;
             NotifyPropertyChanged("player");
             NotifyPropertyChanged("posYMisil");
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             dispatcherTimer.Tick += timerTick;
+            NotifyPropertyChanged("opacidadPausa");
+            //Defensas
+
 
         }
         private void timerTick(object sender, object e)
@@ -114,6 +131,7 @@ namespace SpaceInvaders.ViewModels
                 right();
                 dispatcherTimer.Start();              
             }
+
         }
         public void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
         {
@@ -162,7 +180,6 @@ namespace SpaceInvaders.ViewModels
             await gestoraBL.insertJugador(this.jugador);
         }
 
-
         //Eventos Botones tactiles
         public void btnPointerPressed(object sender, PointerRoutedEventArgs e)//
         {
@@ -187,19 +204,6 @@ namespace SpaceInvaders.ViewModels
                 dispatcherTimer.Stop();
             }
         }
-
-
-       /* public void btnDisparo_PointerPressed(object sender, PointerRoutedEventArgs e)//
-        {
-            //right();
-            //dispatcherTimer.Start();
-        }*/
-       /* public void btnDisparo_PointerExited(object sender, PointerRoutedEventArgs e)//
-        {
-            //dispatcherTimer.Stop();
-        }*/
-
-
 
     }
 }

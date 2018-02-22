@@ -15,7 +15,6 @@
     </Page.DataContext>
 
     <Page.Resources>
-       
     </Page.Resources>
 
     <Grid x:Name="grid" Background="Black" Loaded="allowfocus_Loaded"  >
@@ -25,12 +24,14 @@
             <Image x:Name="vida3" Width="70" Height="70" Margin="10 20 0 0" Source="ms-appx:///Assets/Images/M.gif" Opacity="{Binding player.vida3, Mode=TwoWay}" RelativePanel.RightOf="vida2" />
             <TextBlock Name="txtpuntuacion" Text="SCORE: " Margin="0 30 10 0" FontFamily="Assets\Pixel_Emulator.ttf#Pixel Emulator" Foreground="Green" RelativePanel.LeftOf="puntuacion" FontSize="60"/>
             <TextBlock Name="puntuacion" Text="{Binding puntuacion,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="0 30 200 0" FontFamily="Assets\Pixel_Emulator.ttf#Pixel Emulator" Foreground="Green" RelativePanel.AlignRightWithPanel="True" FontSize="60"/>
+
         </RelativePanel>
-        <Border x:Name="borderCanvas" BorderBrush="Green" BorderThickness="3" MaxHeight="600" MaxWidth="1350" Margin="10">
+        <Border BorderBrush="Green" BorderThickness="3" MaxHeight="600" MaxWidth="1350" Margin="10">
             <Canvas x:Name="canvas" MaxHeight="600" MaxWidth="1350">
                 <Canvas.Background>
                     <ImageBrush ImageSource="ms-appx:///Assets/Images/Fondo Space Invaders.jpg" />
                 </Canvas.Background>
+                <Image Name="imagenPausa" Canvas.Top="250" Canvas.Left="450" Canvas.ZIndex="100" Opacity="{Binding opacidadPausa,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Source="/Assets/Images/Pausa.png"/>
                 <Image x:Name="player" Source="{Binding player.imagen}" Height="58" Width="72" Opacity="{Binding player.visible,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                        Canvas.Left="{Binding player.posicionX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="534"  />
             </Canvas>
