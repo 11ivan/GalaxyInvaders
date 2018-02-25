@@ -49,6 +49,7 @@ namespace SpaceInvaders
         public Boolean haPulsadoEspacio = false;
         public Boolean pausa = false;
         private MediaElement mediaPlayer;
+        private JugadorConDificultad jugadorConDificultad;
 
         //private bool estaDisparando;
 
@@ -62,7 +63,7 @@ namespace SpaceInvaders
             this.InitializeComponent();
             mediaPlayer = new MediaElement();
             this.grid.Children.Add(mediaPlayer);
-            cargaNaves();
+            //cargaNaves();
             cargaDefensas();
             //Window.Current.Content.KeyDown += KeyDownEvent;
             cantidadNaves = 60;
@@ -85,6 +86,8 @@ namespace SpaceInvaders
                 this.relativeBotonesTactiles.Children.Remove(this.btnDcha);
                 this.relativeBotonesTactiles.Children.Remove(this.btnDisparo);
             }
+
+            
         }
 
         private void tickDisparoEnemigo(object sender, object e)
@@ -165,17 +168,18 @@ namespace SpaceInvaders
                     for (int i = 0; i < listaImagenesDefensa.Count; i++)
                     {
                         detectaColisionDefensaAliada(i, playerBullet);
-                    }
-                    if (Canvas.GetTop(playerBullet) < 0)
+                    }//Si "Y" de nuestra bala está por encima del canvas la eliminamos
+                    /*if (Canvas.GetTop(playerBullet) < 0)
                     {
                         this.canvas.Children.Remove(playerBullet);
-                    }
+                    }*/
 
                     //Colision Con Naves Enemigas
                     for (int i = 0; i < listaImagenesNavesEnemigas.Count; i++)
                     {
                         detectaColision(i, playerBullet);
                     }
+
                     if (Canvas.GetTop(playerBullet) < 0)
                     {
                         this.canvas.Children.Remove(playerBullet);
@@ -228,11 +232,11 @@ namespace SpaceInvaders
                 {
                     if (Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetTop(playerBullet) && Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) + 30 >= Canvas.GetTop(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetLeft(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) + 38 >= Canvas.GetLeft(playerBullet))
                     {
-                        cantidadNaves--;//EN DISPAROS RAPIDOS LE DA 2 VECES A LA MISMA NAVE
-                        if (cantidadNaves == 1)
+                           cantidadNaves--;//EN DISPAROS RAPIDOS LE DA 2 VECES A LA MISMA NAVE   SOLUCIONADO EN EL PRIMER IF
+                        /*if (cantidadNaves == 1)
                         {
-                              bool vale = true;
-                        }
+                               bool vale = true;
+                        }*/
                         this.listaEnemigos.ElementAt(i).puedeSerGolpeado = false;
                         this.vMGame.jugador.Puntuacion = this.vMGame.jugador.Puntuacion + listaEnemigos.ElementAt(i).valor;
                         listaEnemigos.ElementAt(i).valor = 0;
@@ -241,7 +245,7 @@ namespace SpaceInvaders
                         listaImagenesNavesEnemigas.ElementAt(i).Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/explosion.gif"));
                         await Task.Delay(500);
                         this.canvas.Children.Remove(listaImagenesNavesEnemigas.ElementAt(i));
-                        reproducirAudioAsync("explosion.mp3");
+                        //reproducirAudioAsync("explosion.mp3");
 
                         //Marcamos la nave enemiga como que no puede disparar
                         listaEnemigos.ElementAt(i).puedeDisparar = false;
@@ -296,7 +300,7 @@ namespace SpaceInvaders
             }
             else
             {
-                this.Frame.Navigate(typeof(Game));
+                this.Frame.Navigate(typeof(Game), jugadorConDificultad);
             } 
 
         }
@@ -604,6 +608,7 @@ namespace SpaceInvaders
                 listaImagenesNavesEnemigas.Add(imagenNave);
             }
         }
+
         private void cargaDefensas()
         {
             int posXB1 = 100;
@@ -914,6 +919,7 @@ namespace SpaceInvaders
             base.OnNavigatedTo(e);
 
             var parameters = (JugadorConDificultad)e.Parameter;
+            jugadorConDificultad = parameters;
             this.vMGame.jugador = new Jugador();
             this.vMGame.jugador.ID = parameters.ID;
             this.vMGame.jugador.Nombre = parameters.Nombre;
