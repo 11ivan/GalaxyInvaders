@@ -27,12 +27,14 @@ namespace SpaceInvaders.ViewModels
         private double _mVolumeMedia;
         private int _mVolumeSlider;
         private bool _splitAbierto;
+        private bool _isMuted;
         private Jugador jugador;
 
         #endregion
         #region contructor
         public MainPageGameVM()
         {
+            _isMuted = false;
             _username1 = "";
             _username2 = "";
             _username3 = "";
@@ -51,6 +53,19 @@ namespace SpaceInvaders.ViewModels
         #endregion
 
         #region Propiedades Publicas
+
+        public bool isMuted
+        {
+            set
+            {
+                _isMuted = value;
+                NotifyPropertyChanged("isMuted");
+            }
+            get
+            {
+                return _isMuted;
+            }
+        }
         public String mDificultadSeleccionada
         {
             get
@@ -242,7 +257,7 @@ namespace SpaceInvaders.ViewModels
                 userName3 = "R";
             }
             jugador.Nombre = userName1 + userName2 + userName3;
-            jugadorConDificultad = new JugadorConDificultad(jugador, mDificultadSeleccionada);
+            jugadorConDificultad = new JugadorConDificultad(jugador, mDificultadSeleccionada,_mVolumeMedia,isMuted);
             navigationFrame.Navigate(typeof(Game),jugadorConDificultad);
             
         }

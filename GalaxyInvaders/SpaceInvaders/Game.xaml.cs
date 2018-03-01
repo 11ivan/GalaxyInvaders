@@ -39,6 +39,7 @@ namespace SpaceInvaders
         public int cantidadNaves;
         public int cantidadDefensas;
         private int dificultad;
+        private JugadorConDificultad JugadorConDificultad;
         //private bool haPulsado;
         //private bool haLevantado;
         public DispatcherTimer timer = new DispatcherTimer();
@@ -49,7 +50,8 @@ namespace SpaceInvaders
         public Boolean haPulsadoEspacio = false;
         public Boolean pausa = false;
         private MediaElement mediaPlayer;
-        private JugadorConDificultad jugadorConDificultad;
+        private string mensajeVictoria = "Victoria!!";
+        private string mensajeDerrota = "Ooooh, you lose...";
 
         //private bool estaDisparando;
 
@@ -61,9 +63,7 @@ namespace SpaceInvaders
             //haPulsado = false;
             //haLevantado = false;
             this.InitializeComponent();
-            mediaPlayer = new MediaElement();
-            this.grid.Children.Add(mediaPlayer);
-            //cargaNaves();
+            
             cargaDefensas();
             //Window.Current.Content.KeyDown += KeyDownEvent;
             cantidadNaves = 60;
@@ -86,8 +86,6 @@ namespace SpaceInvaders
                 this.relativeBotonesTactiles.Children.Remove(this.btnDcha);
                 this.relativeBotonesTactiles.Children.Remove(this.btnDisparo);
             }
-
-            
         }
 
         private void tickDisparoEnemigo(object sender, object e)
@@ -140,19 +138,21 @@ namespace SpaceInvaders
             }
             if (e.Key == VirtualKey.Escape && !pausa) //CUANDO REANUDAS EL JUEGO LOS MISILES QUE HABIAN Y SE HAN PARADO NO SE MUEVEN
             {
-                noDispares = true;
+                pausar(0);
+                /*noDispares = true;
                 pausa = true;
                 timer.Stop();
                 Window.Current.Content.KeyDown -= this.vMGame.Grid_KeyDown;
-                this.vMGame.opacidadPausa = 1;
+                this.vMGame.opacidadPausa = 1;*/
             }
             else if (e.Key == VirtualKey.Escape && pausa)
             {
-                noDispares = false;
+                volverdepausa();
+                /*noDispares = false;
                 pausa = false;
                 timer.Start();
                 Window.Current.Content.KeyDown += this.vMGame.Grid_KeyDown;
-                this.vMGame.opacidadPausa = 0;
+                this.vMGame.opacidadPausa = 0;*/
             }
         }
 
@@ -168,18 +168,17 @@ namespace SpaceInvaders
                     for (int i = 0; i < listaImagenesDefensa.Count; i++)
                     {
                         detectaColisionDefensaAliada(i, playerBullet);
-                    }//Si "Y" de nuestra bala está por encima del canvas la eliminamos
-                    /*if (Canvas.GetTop(playerBullet) < 0)
+                    }
+                    if (Canvas.GetTop(playerBullet) < 0)
                     {
                         this.canvas.Children.Remove(playerBullet);
-                    }*/
+                    }
 
                     //Colision Con Naves Enemigas
                     for (int i = 0; i < listaImagenesNavesEnemigas.Count; i++)
                     {
                         detectaColision(i, playerBullet);
                     }
-
                     if (Canvas.GetTop(playerBullet) < 0)
                     {
                         this.canvas.Children.Remove(playerBullet);
@@ -200,12 +199,12 @@ namespace SpaceInvaders
                 {
                     if (Canvas.GetTop(listaImagenesDefensa.ElementAt(i)) <= Canvas.GetTop(playerBullet) && Canvas.GetTop(listaImagenesDefensa.ElementAt(i)) + 35 >= Canvas.GetTop(playerBullet) && Canvas.GetLeft(listaImagenesDefensa.ElementAt(i)) <= Canvas.GetLeft(playerBullet) && Canvas.GetLeft(listaImagenesDefensa.ElementAt(i)) + 40 >= Canvas.GetLeft(playerBullet))
                     {
+                        reproducirAudioAsync("romperroca.mp3");
                         this.listaDefensas.ElementAt(i).impactos++; //Le Sumamos un Impacto
                         this.canvas.Children.Remove(playerBullet); //Borramos la Bala porque ha chocado.
                         if (this.listaDefensas.ElementAt(i).impactos == 1)
                         {
                             listaImagenesDefensa.ElementAt(i).Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/ExplosionMeteorito.gif"));
-                            reproducirAudioAsync("explosion.mp3");
                             await Task.Delay(200);
                             listaImagenesDefensa.ElementAt(i).Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/DefendRota.png"));
                         }
@@ -214,7 +213,6 @@ namespace SpaceInvaders
                             cantidadDefensas--;
                             this.listaDefensas.ElementAt(i).puedeImpactar = false;
                             listaImagenesDefensa.ElementAt(i).Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/ExplosionMeteorito2.gif"));
-                            reproducirAudioAsync("explosion.mp3");
                             await Task.Delay(500);
                             this.canvas.Children.Remove(listaImagenesDefensa.ElementAt(i));
                         }
@@ -232,11 +230,7 @@ namespace SpaceInvaders
                 {
                     if (Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetTop(playerBullet) && Canvas.GetTop(listaImagenesNavesEnemigas.ElementAt(i)) + 30 >= Canvas.GetTop(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) <= Canvas.GetLeft(playerBullet) && Canvas.GetLeft(listaImagenesNavesEnemigas.ElementAt(i)) + 38 >= Canvas.GetLeft(playerBullet))
                     {
-                           cantidadNaves--;//EN DISPAROS RAPIDOS LE DA 2 VECES A LA MISMA NAVE   SOLUCIONADO EN EL PRIMER IF
-                        /*if (cantidadNaves == 1)
-                        {
-                               bool vale = true;
-                        }*/
+                        cantidadNaves--;
                         this.listaEnemigos.ElementAt(i).puedeSerGolpeado = false;
                         this.vMGame.jugador.Puntuacion = this.vMGame.jugador.Puntuacion + listaEnemigos.ElementAt(i).valor;
                         listaEnemigos.ElementAt(i).valor = 0;
@@ -245,11 +239,10 @@ namespace SpaceInvaders
                         listaImagenesNavesEnemigas.ElementAt(i).Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/explosion.gif"));
                         await Task.Delay(500);
                         this.canvas.Children.Remove(listaImagenesNavesEnemigas.ElementAt(i));
-                        //reproducirAudioAsync("explosion.mp3");
+                        reproducirAudioAsync("explosion.mp3");
 
                         //Marcamos la nave enemiga como que no puede disparar
                         listaEnemigos.ElementAt(i).puedeDisparar = false;
-                        
                         if (cantidadNaves == 0 && !haGanado)
                         {
                             //Paramos los timer
@@ -257,9 +250,7 @@ namespace SpaceInvaders
                             timerDisparoEnemigo.Stop();
                             noDispares = true;
                             haGanado = true;
-                            //
-                            mostrarGanador();
-                            
+                            mostrarGanadorPerdedor(mensajeVictoria);
 
                         }
                         siguienteNaveQuePuedeDisparar(i);
@@ -267,42 +258,24 @@ namespace SpaceInvaders
                 }
             }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private async void mostrarGanador()
+        private async void mostrarGanadorPerdedor(string mensaje)
         {
             //ContentDialog hasGanado = new ContentDialog();
-            hasGanadoContentDialog.Title = "Victoria!!";
+            hasGanadoContentDialog.Title = mensaje;
             hasGanadoContentDialog.Content = "Enhorabuena, has hecho " + this.vMGame.jugador.Puntuacion + " puntos";
-            hasGanadoContentDialog.PrimaryButtonText = "Submit Score";
+            hasGanadoContentDialog.PrimaryButtonText = "Continue";
             hasGanadoContentDialog.SecondaryButtonText = "Restart";
-            //hasGanadoContentDialog.IsFocusEngaged=false;
-            //hasGanadoContentDialog.AllowFocusOnInteraction = false;
-            //var buttonSpace = (Button) Window.Current.CoreWindow.GetKeyState(VirtualKey.Space);
-
-
-
             ContentDialogResult resultado = await hasGanadoContentDialog.ShowAsync();
-            //hasGanadoContentDialog.Focus(FocusState.Unfocused);
-            //hasGanadoContentDialog.IsTapEnabled = false;
-
-            //hasGanadoContentDialog.IsFocusEngagementEnabled = false;
-            //hasGanadoContentDialog.AllowFocusOnInteraction = false;
-            /*var buttonSpace = (Button)FocusManager.GetFocusedElement();
-            buttonSpace.IsFocusEngagementEnabled = false;*/
 
             if (resultado == ContentDialogResult.Primary /*&& !haPulsadoEspacio*/)
             {
                 this.vMGame.submitScore();
                 this.Frame.Navigate(typeof(MainPage));
             }
-            else
+            else if(resultado==ContentDialogResult.Secondary)
             {
-                this.Frame.Navigate(typeof(Game), jugadorConDificultad);
-            } 
-
+                this.Frame.Navigate(typeof(Game),JugadorConDificultad);
+            }
         }
 
 
@@ -458,7 +431,7 @@ namespace SpaceInvaders
                                 timerDisparoEnemigo.Stop();
 
                                 //Mostrar mensaje para reiniciar partida
-
+                                mostrarGanadorPerdedor(mensajeDerrota);
                             }
                             else
                             {
@@ -497,6 +470,7 @@ namespace SpaceInvaders
                 {
                     if (Canvas.GetTop(listaImagenesDefensa.ElementAt(i)) <= Canvas.GetTop(playerBullet) + 20 && Canvas.GetTop(listaImagenesDefensa.ElementAt(i)) + 40 >= Canvas.GetTop(playerBullet) && Canvas.GetLeft(listaImagenesDefensa.ElementAt(i)) <= Canvas.GetLeft(playerBullet) + 10 && Canvas.GetLeft(listaImagenesDefensa.ElementAt(i)) + 38 >= Canvas.GetLeft(playerBullet))
                     {
+                        reproducirAudioAsync("romperroca.mp3");
                         this.listaDefensas.ElementAt(i).impactos++; //Le Sumamos un Impacto
                         this.canvas.Children.Remove(playerBullet); //Borramos la Bala porque ha chocado.
                         if (this.listaDefensas.ElementAt(i).impactos == 1)
@@ -532,10 +506,30 @@ namespace SpaceInvaders
                     break;
 
                 case 0:
-                    vMGame.player.vida1 = 0;
+                    vMGame.player.vida1 = 0;                   
                     break;
             }
         }
+
+        /*public async void mostrarPerdedor()
+        {
+            ContentDialog perdedorDialog = new ContentDialog();
+            perdedorDialog.Title = "Ooooh, you lose...";
+            perdedorDialog.Content = $"Has hecho {this.vMGame.jugador.Puntuacion} puntos";
+            perdedorDialog.PrimaryButtonText = "Continue";
+            perdedorDialog.SecondaryButtonText = "Restart";
+            ContentDialogResult contentDialogResult = await perdedorDialog.ShowAsync();
+
+            if (contentDialogResult == ContentDialogResult.Primary)
+            {
+                this.vMGame.submitScore();
+                this.Frame.Navigate(typeof(MainPage));
+            }
+            else if (contentDialogResult == ContentDialogResult.Secondary)
+            {
+                this.Frame.Navigate(typeof(Game),jugadorActual);
+            }
+        }*/
 
         private void cargaNaves()
         {
@@ -608,7 +602,6 @@ namespace SpaceInvaders
                 listaImagenesNavesEnemigas.Add(imagenNave);
             }
         }
-
         private void cargaDefensas()
         {
             int posXB1 = 100;
@@ -908,10 +901,65 @@ namespace SpaceInvaders
             }
         }
 
-        public void aumentaPosY(int posicionNave, Image imagenNave, NaveEnemiga naveEnemiga)
-        {
+        /// <summary>
+        /// Aumenta el eje Y de una Nave enemiga
+        /// </summary>
+        /// <param name="posicionNave"></param>
+        /// <param name="imagenNave"></param>
+        /// <param name="naveEnemiga"></param>
+        public void aumentaPosY(int posicionNave, Image imagenNave, NaveEnemiga naveEnemiga)//400 es la posicion Y de la defensa 
+        {                                                                                    //mas alta
+            Boolean haPerdido = false;
+            //Si hay defensas
+            if (cantidadDefensas>0)
+            {
+                //Comprobamos altura con la defensa mas alta
+                if ( (listaEnemigos.ElementAt(posicionNave).posY + 10) >= getPosicionDefensaMasAlta() )
+                {
+                    haPerdido = true;
+                }
+            }
+            else
+            {
+                //Sino comprobamos con la parte alta de nuestra nave
+                if ((listaEnemigos.ElementAt(posicionNave).posY + 10) >= 534)//534 es el eje Y de nuestra nave
+                {
+                    haPerdido = true;
+                }
+            }
+            if (haPerdido)
+            {
+                //Mostrar mensaje perdedor y pausar timers
+                pausar(1);
+                mostrarGanadorPerdedor(mensajeDerrota);
+            }
             listaEnemigos.ElementAt(posicionNave).posY = listaEnemigos.ElementAt(posicionNave).posY + 10;
-            Canvas.SetTop(imagenNave, naveEnemiga.posY);
+            Canvas.SetTop(imagenNave, naveEnemiga.posY);            
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int getPosicionDefensaMasAlta()
+        {
+            int indiceDefensaAlta = 0;
+            double alturaLeida = 0;
+            double alturaAlta = 600;
+            for (int i=0;i<listaImagenesDefensa.Count;i++)
+            {
+                //Si el canvas contiene la imagen de la defensa
+                if (this.canvas.Children.Contains(listaImagenesDefensa.ElementAt(i)))
+                {
+                    alturaLeida = Canvas.GetTop(listaImagenesDefensa.ElementAt(i));
+                    if (alturaLeida < alturaAlta)
+                    {
+                        alturaAlta = alturaLeida;
+                        indiceDefensaAlta = i;
+                    }
+                }
+            }
+            return indiceDefensaAlta;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -919,7 +967,7 @@ namespace SpaceInvaders
             base.OnNavigatedTo(e);
 
             var parameters = (JugadorConDificultad)e.Parameter;
-            jugadorConDificultad = parameters;
+            JugadorConDificultad = parameters;
             this.vMGame.jugador = new Jugador();
             this.vMGame.jugador.ID = parameters.ID;
             this.vMGame.jugador.Nombre = parameters.Nombre;
@@ -944,6 +992,16 @@ namespace SpaceInvaders
             timerDisparoEnemigo.Interval = new TimeSpan(0, 0, 0, 0, 2000 / dificultad);
             timerDisparoEnemigo.Tick += tickDisparoEnemigo;
             timerDisparoEnemigo.Start();
+            mediaPlayer = new MediaElement();
+            this.grid.Children.Add(mediaPlayer);
+            if (parameters.isMuted == true)
+            {
+                mediaPlayer.IsMuted = true;
+            }
+            else
+            {
+                mediaPlayer.Volume = parameters.volumen;
+            }
         }
         /**
          *Reproduce audio de la carpeta music 
@@ -976,7 +1034,54 @@ namespace SpaceInvaders
             await PlayMusicImpact(nombreAudio);
         }
 
+        public void btnBackMenuClick(object sender, PointerRoutedEventArgs e)
+        {
 
+            var rootFrame = new Frame();
+            rootFrame.Navigate(typeof(MainPage));
+
+            Window.Current.Content = rootFrame;
+            Window.Current.Activate();
+
+        }
+
+        public void btnSeguirclick(object sender, PointerRoutedEventArgs e)
+        {
+            volverdepausa();
+        }
+
+        public void btnReiniciarclick(object sender, PointerRoutedEventArgs e)
+        {
+
+            var rootFrame = new Frame();
+            rootFrame.Navigate(typeof(Game), JugadorConDificultad);
+
+            Window.Current.Content = rootFrame;
+            Window.Current.Activate();
+        }
+
+
+
+        public void volverdepausa()
+        {
+            noDispares = false;
+            pausa = false;
+            timer.Start();
+            Window.Current.Content.KeyDown += this.vMGame.Grid_KeyDown;
+            this.vMGame.opacidadPausa = 0;
+        }
+
+        public void pausar(int motivo)//Si esl motivo es 0 mostramos la imagen de pausa
+        {
+            noDispares = true;
+            pausa = true;
+            timer.Stop();
+            Window.Current.Content.KeyDown -= this.vMGame.Grid_KeyDown;
+            if (motivo == 0)
+            {
+                this.vMGame.opacidadPausa = 1;
+            }            
+        }
 
 
 

@@ -113,6 +113,19 @@ namespace SpaceInvaders.ViewModels
 
 
         }
+
+        public NaveAmiga Player
+        {
+            get
+            {
+                return _player;
+            }
+            set
+            {
+                _player = value;
+            }
+        }
+
         private void timerTick(object sender, object e)
         {
             move();
