@@ -44,10 +44,10 @@ namespace SpaceInvaders
         //private bool haLevantado;
         public DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer timerDisparoEnemigo = new DispatcherTimer();
+        public DispatcherTimer timerDisparo = new DispatcherTimer();
         public ContentDialog hasGanadoContentDialog = new ContentDialog();
         public Boolean noDispares = false;
         public Boolean haGanado = false;
-        public Boolean haPulsadoEspacio = false;
         public Boolean pausa = false;
         private MediaElement mediaPlayer;
         private string mensajeVictoria = "Victoria!!";
@@ -74,10 +74,12 @@ namespace SpaceInvaders
             timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timer.Tick += Timer_Tick;
             timer.Start();
-
-            timerDisparoEnemigo.Interval = new TimeSpan(0, 0, 0, 2, 0);
-            timerDisparoEnemigo.Tick += tickDisparoEnemigo;
-            timerDisparoEnemigo.Start();
+            timerDisparo.Interval = new TimeSpan(0,0,1);
+            timerDisparo.Tick += TimerDisparo_Tick;
+            timerDisparo.Start();
+            //timerDisparoEnemigo.Interval = new TimeSpan(0, 0, 0, 20, 0);
+            //timerDisparoEnemigo.Tick += tickDisparoEnemigo;
+            //timerDisparoEnemigo.Start();
 
             //Si esta en modo tactil
             if (UIViewSettings.GetForCurrentView().UserInteractionMode != UserInteractionMode.Touch)
@@ -87,19 +89,38 @@ namespace SpaceInvaders
                 this.relativeBotonesTactiles.Children.Remove(this.btnDisparo);
             }
         }
+        /// <summary>
+        /// Este método restringe que solo se pueda disparar una vez por segundo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TimerDisparo_Tick(object sender, object e)
+        {
+            noDispares = false;
+        }
 
+        /// <summary>
+        /// Este se ejecutará más o menos dependiendo la dificultad elegida y se encarga de pintar el disparo en el canvas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tickDisparoEnemigo(object sender, object e)
         {
             disparoEnemigo();
         }
 
+        /// <summary>
+        /// Este método se encargará de mover las naves enemigas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Timer_Tick(object sender, object e)
         {
             move();
         }
 
         /// <summary>
-        /// Si este evento no hace caso al KeyDown
+        /// Cuando la vista Game obtiene el foco, inicializa estos eventos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -112,30 +133,45 @@ namespace SpaceInvaders
             //Window.Current.Content.KeyUp += Disparo_KeyUp;
         }
 
+        /// <summary>
+        /// Como el key up pero para los botones, se encarga de disparar en pantallas táctiles
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnDisparo_PointerExited(object sender, PointerRoutedEventArgs e)//
         {
             Image image = (Image)sender;
             if (image.Name.Equals("btnDisparo") && !noDispares)
             {
                 disparar();
+                noDispares = true;
             }
         }
-
+        /// <summary>
+        /// Evento que se llama cuando se levanta una tecla, en nuestro caso, cuando se levante el espacio para disparar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Disparo_KeyUp(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == VirtualKey.Space && !noDispares)
             {
                 //haLevantado = true;
                 disparar();
+                noDispares = true;
             }
         }
-
+        /// <summary>
+        /// Evento que se llama cuando se pulsa una tecla, en nuestro caso, cuando se pulsa ESC para pausar o quitar la pausa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Disparo_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-            if (e.Key == VirtualKey.Space)
-            {
-                haPulsadoEspacio = true;
-            }
+            //if (e.Key == VirtualKey.Space)
+            //{
+            //    haPulsadoEspacio = true;
+            //}
             if (e.Key == VirtualKey.Escape && !pausa) //CUANDO REANUDAS EL JUEGO LOS MISILES QUE HABIAN Y SE HAN PARADO NO SE MUEVEN
             {
                 pausar(0);
@@ -156,6 +192,11 @@ namespace SpaceInvaders
             }
         }
 
+        /// <summary>
+        /// Este método mueve la bala pintada en el canvas del jugador hacia arriba
+        /// </summary>
+        /// <param name="velocidad"></param>
+        /// <param name="playerBullet"></param>
         private async void moveBullet(int velocidad, Image playerBullet)
         {
             while (this.canvas.Children.Contains(playerBullet))
@@ -191,6 +232,11 @@ namespace SpaceInvaders
             }
         }
 
+        /// <summary>
+        /// Este método detecta el impacto de una bala del jugador con las defensas y las borra al segundo impacto
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="playerBullet"></param>
         public async void detectaColisionDefensaAliada(int i, Image playerBullet)
         {
             if (this.canvas.Children.Contains(listaImagenesDefensa.ElementAt(i)))
@@ -221,6 +267,11 @@ namespace SpaceInvaders
             }
         }
 
+        /// <summary>
+        /// Detecta la colisión de la bala del jugador con una nave enemiga, si no impacta en ninguna nave, al llegar arriba del todo se borrará la bala
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="playerBullet"></param>
         public async void detectaColision(int i, Image playerBullet)
         {
 
@@ -258,6 +309,11 @@ namespace SpaceInvaders
                 }
             }
         }
+        /// <summary>
+        /// Muestra si has ganado o has perdido según el mensaje enviado con dos botones, uno para reiniciar partida y otro para subir
+        /// la puntuación y volver al menú principal
+        /// </summary>
+        /// <param name="mensaje">string que indica victoria o derrota</param>
         private async void mostrarGanadorPerdedor(string mensaje)
         {
             //ContentDialog hasGanado = new ContentDialog();
@@ -278,7 +334,11 @@ namespace SpaceInvaders
             }
         }
 
-
+        /// <summary>
+        /// Este método indica si una nave puede disparar,
+        /// ya que no todas las naves pueden disparar, puede que tenga alguna debajo
+        /// </summary>
+        /// <param name="indiceNave">Índice de la nave en la lista</param>
         public void siguienteNaveQuePuedeDisparar(int indiceNave)
         {
             if (indiceNave >= 12 && indiceNave <= 23)
@@ -345,8 +405,12 @@ namespace SpaceInvaders
             }
         }
 
-        private void disparar()
+        /// <summary>
+        /// Pinta la bala del jugador en el canvas
+        /// </summary>
+        private /*async*/ void disparar()
         {
+            //await Task.Delay(2000);
             if (this.player.Opacity != 0)
             {
                 Disparo disparo = new Disparo(vMGame.posYMisil, vMGame.player.posicionX, 20, 10, new Uri("ms-appx:///Assets/Images/MisilPro.png"));
@@ -361,7 +425,9 @@ namespace SpaceInvaders
                 reproducirAudioAsync("disparo.wav");
             }
         }
-
+        /// <summary>
+        /// Genera un número aleatorio que indica la nave que va a disparar y pinta la bala en el canvas
+        /// </summary>
         private void disparoEnemigo()
         {
             //Generar aleatorio para disparo
@@ -388,6 +454,11 @@ namespace SpaceInvaders
             moveBulletEnemigo(disparo.velocidad, playerBullet);
         }
 
+        /// <summary>
+        /// Mueve la bala enemiga hacia abajo
+        /// </summary>
+        /// <param name="velocidad"></param>
+        /// <param name="enemyBullet"></param>
         private async void moveBulletEnemigo(int velocidad, Image enemyBullet)
         {
             while (this.canvas.Children.Contains(enemyBullet))
@@ -422,19 +493,20 @@ namespace SpaceInvaders
                             vMGame.player.vidas--;
                             cambiaVisibilidad();
 
-                            await Task.Delay(800);
 
-                            if (vMGame.player.vidas == 0)
+
+                            if (vMGame.player.vidas <= 0)
                             {
-                                this.player.Opacity = 0;
+                                /*this.player.Opacity = 0;
                                 timer.Stop();
-                                timerDisparoEnemigo.Stop();
-
+                                timerDisparoEnemigo.Stop();*/
+                                pausar(1);
                                 //Mostrar mensaje para reiniciar partida
                                 mostrarGanadorPerdedor(mensajeDerrota);
                             }
                             else
                             {
+                                await Task.Delay(200);
                                 this.player.Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/PlayerPro.png"));
                             }
                         }
@@ -461,7 +533,11 @@ namespace SpaceInvaders
                 }
             }
         }
-
+        /// <summary>
+        /// Detecta la colisión de la bala enemiga con las defensas, si choca, borra la bala
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="playerBullet"></param>
         public async void detectaColisionDefensaEnemigo(int i, Image playerBullet)
         {
             if (this.canvas.Children.Contains(listaImagenesDefensa.ElementAt(i)))
@@ -492,7 +568,9 @@ namespace SpaceInvaders
             }
         }
 
-
+        /// <summary>
+        /// Cambia la visibilidad de las vidas del jugador
+        /// </summary>
         public void cambiaVisibilidad()
         {
             switch (vMGame.player.vidas)
@@ -530,7 +608,9 @@ namespace SpaceInvaders
                 this.Frame.Navigate(typeof(Game),jugadorActual);
             }
         }*/
-
+        /// <summary>
+        /// Se encarga de pintar las naves en el canvas
+        /// </summary>
         private void cargaNaves()
         {
             NaveEnemiga nave = null;
@@ -602,6 +682,9 @@ namespace SpaceInvaders
                 listaImagenesNavesEnemigas.Add(imagenNave);
             }
         }
+        /// <summary>
+        /// Se encarga de pintar las defensas en el canvas
+        /// </summary>
         private void cargaDefensas()
         {
             int posXB1 = 100;
@@ -910,19 +993,24 @@ namespace SpaceInvaders
         public void aumentaPosY(int posicionNave, Image imagenNave, NaveEnemiga naveEnemiga)//400 es la posicion Y de la defensa 
         {                                                                                    //mas alta
             Boolean haPerdido = false;
+            double pos1 = Canvas.GetTop(imagenNave) + 45;
             //Si hay defensas
             if (cantidadDefensas>0)
             {
+                
+                //int pos2 = (listaDefensas.ElementAt(getPosicionDefensaMasAlta()).posY);
+                double pos2=Canvas.GetTop(listaImagenesDefensa.ElementAt(getPosicionDefensaMasAlta()));
                 //Comprobamos altura con la defensa mas alta
-                if ( (listaEnemigos.ElementAt(posicionNave).posY + 10) >= getPosicionDefensaMasAlta() )
+                if ( pos1 >= pos2 )
                 {
                     haPerdido = true;
                 }
             }
             else
             {
+
                 //Sino comprobamos con la parte alta de nuestra nave
-                if ((listaEnemigos.ElementAt(posicionNave).posY + 10) >= 534)//534 es el eje Y de nuestra nave
+                if (pos1 >= 520)//534 es el eje Y de nuestra nave
                 {
                     haPerdido = true;
                 }
@@ -933,12 +1021,12 @@ namespace SpaceInvaders
                 pausar(1);
                 mostrarGanadorPerdedor(mensajeDerrota);
             }
-            listaEnemigos.ElementAt(posicionNave).posY = listaEnemigos.ElementAt(posicionNave).posY + 10;
+            listaEnemigos.ElementAt(posicionNave).posY = listaEnemigos.ElementAt(posicionNave).posY + 20;//20
             Canvas.SetTop(imagenNave, naveEnemiga.posY);            
         }
 
         /// <summary>
-        /// 
+        /// Devuelve el índice de la defensa que esté en una posición más alta
         /// </summary>
         /// <returns></returns>
         public int getPosicionDefensaMasAlta()
@@ -962,6 +1050,10 @@ namespace SpaceInvaders
             return indiceDefensaAlta;
         }
 
+        /// <summary>
+        /// Evento que se da cuando se navega a la página Game
+        /// </summary>
+        /// <param name="e">Objeto </param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -990,6 +1082,7 @@ namespace SpaceInvaders
             }
             cargaNaves();
             timerDisparoEnemigo.Interval = new TimeSpan(0, 0, 0, 0, 2000 / dificultad);
+            //timerDisparoEnemigo.Interval = new TimeSpan(0, 0, 0, 20, 0);
             timerDisparoEnemigo.Tick += tickDisparoEnemigo;
             timerDisparoEnemigo.Start();
             mediaPlayer = new MediaElement();
@@ -1003,10 +1096,11 @@ namespace SpaceInvaders
                 mediaPlayer.Volume = parameters.volumen;
             }
         }
-        /**
-         *Reproduce audio de la carpeta music 
-         * 
-         */
+        /// <summary>
+        /// Reproduce un sonido dependiendo el nombre de audio pasado, si hay uno sonando, se para ese y se reproduce otro
+        /// </summary>
+        /// <param name="nombreAudio"></param>
+        /// <returns></returns>
         private async Task PlayMusicImpact(String nombreAudio) //se bloquea la ui cuando hay muchos disparos!!!!!!!!!!!!!!!!!!!!!!
         {
             /* mediaPlayer = new MediaPlayerElement();
@@ -1028,40 +1122,49 @@ namespace SpaceInvaders
             }
 
         }
-
+        /// <summary>
+        /// Reproduce un sonido dependiendo el audio pasado
+        /// </summary>
+        /// <param name="nombreAudio"></param>
         private async void reproducirAudioAsync(String nombreAudio)
         {
             await PlayMusicImpact(nombreAudio);
         }
 
+        /// <summary>
+        /// Evento que se da al pulsar el botón back del pausa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnBackMenuClick(object sender, PointerRoutedEventArgs e)
         {
-
-            var rootFrame = new Frame();
-            rootFrame.Navigate(typeof(MainPage));
-
-            Window.Current.Content = rootFrame;
-            Window.Current.Activate();
-
+            this.Frame.Navigate(typeof(MainPage));
         }
-
+        /// <summary>
+        /// Evento que se da al pulsar el botón Resume del pausa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnSeguirclick(object sender, PointerRoutedEventArgs e)
         {
             volverdepausa();
         }
-
+        /// <summary>
+        /// Evento que se da al pulsar el botón Restart del pausa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnReiniciarclick(object sender, PointerRoutedEventArgs e)
         {
 
-            var rootFrame = new Frame();
-            rootFrame.Navigate(typeof(Game), JugadorConDificultad);
+            this.Frame.Navigate(typeof(Game), JugadorConDificultad);
 
-            Window.Current.Content = rootFrame;
-            Window.Current.Activate();
         }
 
 
-
+        /// <summary>
+        /// Método que se encarga de quitar la pausa y continuar la partida
+        /// </summary>
         public void volverdepausa()
         {
             noDispares = false;
@@ -1070,7 +1173,10 @@ namespace SpaceInvaders
             Window.Current.Content.KeyDown += this.vMGame.Grid_KeyDown;
             this.vMGame.opacidadPausa = 0;
         }
-
+        /// <summary>
+        /// Método que se encarga de pausar el juego y mostrar la imagen de pausa con sus botones
+        /// </summary>
+        /// <param name="motivo"></param>
         public void pausar(int motivo)//Si esl motivo es 0 mostramos la imagen de pausa
         {
             noDispares = true;

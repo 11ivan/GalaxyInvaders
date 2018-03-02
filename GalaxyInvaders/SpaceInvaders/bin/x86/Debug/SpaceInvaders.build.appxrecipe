@@ -571,6 +571,9 @@
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\DefendRota.png">
       <PackagePath>Assets\Images\DefendRota.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Exit.png">
+      <PackagePath>Assets\Images\Exit.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\FlechaDer.png">
       <PackagePath>Assets\Images\FlechaDer.png</PackagePath>
     </AppxPackagedFile>

@@ -49,7 +49,7 @@
                         <Image x:ConnectionId='11'  x:Name="btnReiniciar"                                    RelativePanel.Below="imagenPausa" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="5" Opacity="{Binding opacidadPausa,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Width="100" Source="ms-appx:///Assets/Images/restart.png"  />
 
 
-                        <Image x:ConnectionId='12'  Width="100"                                   Source="ms-appx:///Assets/Images/exit.png"  x:Name="btnContinue"  RelativePanel.Below="imagenPausa" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="5" Opacity="{Binding opacidadPausa,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <Image x:ConnectionId='12'  Width="100"                                   Source="ms-appx:///Assets/Images/Exit.png"  x:Name="btnContinue"  RelativePanel.Below="imagenPausa" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="5" Opacity="{Binding opacidadPausa,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
