@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>881268F0ACE616567EA8520A61AB0D16D4163236561DF60887E499A240AF96EB</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>A27BB75021A54745854BE119E458DA4A582E0C77B690FF4405D2E83FD5106584</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0715efcf-eba3-47a3-a789-29b1c46da80f_0.1.0.0_x86__88hb40tn070bc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0715efcf-eba3-47a3-a789-29b1c46da80f_88hb40tn070bc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0715efcf-eba3-47a3-a789-29b1c46da80f</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-02T13:17:03.940</Modified>
+      <Modified>2018-03-05T12:30:59.910</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\SpaceInvaders.exe">
       <PackagePath>entrypoint\SpaceInvaders.exe</PackagePath>
-      <Modified>2018-03-02T13:17:02.708</Modified>
+      <Modified>2018-03-05T11:53:14.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\.nuget\packages\newtonsoft.json\10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -1103,11 +1103,11 @@
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-02T13:17:03.458</Modified>
+      <Modified>2018-03-05T12:30:59.285</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\Core\SpaceInvaders.exe">
       <PackagePath>SpaceInvaders.exe</PackagePath>
-      <Modified>2018-03-02T13:17:03.929</Modified>
+      <Modified>2018-03-05T12:30:59.894</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

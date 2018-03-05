@@ -10,7 +10,7 @@
   <Identity Name="0715efcf-eba3-47a3-a789-29b1c46da80f" Publisher="CN=pjarana" Version="0.1.0.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="0715efcf-eba3-47a3-a789-29b1c46da80f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>SpaceInvaders</DisplayName>
+    <DisplayName>GalaxyInvaders</DisplayName>
     <PublisherDisplayName>pjarana</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,7 +23,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="SpaceInvaders.exe" EntryPoint="SpaceInvaders.App">
-      <uap:VisualElements DisplayName="SpaceInvaders" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="SpaceInvaders" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="GalaxyInvaders" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="GalaxyInvaders" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png"></uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="midnightBlue" />
       </uap:VisualElements>
