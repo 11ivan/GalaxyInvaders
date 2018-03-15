@@ -190,3 +190,4 @@ C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-BL\obj\x86\Debug
 C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-BL\obj\x86\Debug\qualifiers.txt
 C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-BL\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-BL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\Capa-BL\obj\x86\Debug\Capa-BL.csproj.CopyComplete

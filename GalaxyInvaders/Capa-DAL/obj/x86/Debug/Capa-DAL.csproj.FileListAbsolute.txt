@@ -166,3 +166,4 @@ C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-DAL\obj\x86\Debu
 C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-DAL\obj\x86\Debug\qualifiers.txt
 C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-DAL\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\mgonzalez\Desktop\Proyectos Galaxy\GalaxyInvaders\Capa-DAL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\Capa-DAL\obj\x86\Debug\Capa-DAL.csproj.CopyComplete

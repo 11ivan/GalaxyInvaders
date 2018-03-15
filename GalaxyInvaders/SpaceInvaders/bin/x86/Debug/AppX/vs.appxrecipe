@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>107-11</Machine>
+    <Machine>DESKTOP-9FL53TF</Machine>
     <WindowsUser>icastillo</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -17,9 +17,9 @@
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
-    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <WindowsSdkPath>C:\Program Files\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>A27BB75021A54745854BE119E458DA4A582E0C77B690FF4405D2E83FD5106584</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>460A5ED74B93A09E2218BE7BF933025FAC7129501D92B0CFE88DECB99113E637</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0715efcf-eba3-47a3-a789-29b1c46da80f_0.1.0.0_x86__88hb40tn070bc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0715efcf-eba3-47a3-a789-29b1c46da80f_88hb40tn070bc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0715efcf-eba3-47a3-a789-29b1c46da80f</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-05T12:30:59.910</Modified>
+      <Modified>2018-03-15T23:13:09.291</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\SpaceInvaders.exe">
       <PackagePath>entrypoint\SpaceInvaders.exe</PackagePath>
-      <Modified>2018-03-05T11:53:14.608</Modified>
+      <Modified>2018-03-15T23:13:08.579</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\.nuget\packages\newtonsoft.json\10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -701,413 +701,413 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\Capa-BL\bin\x86\Debug\Capa-BL.dll">
       <PackagePath>Capa-BL.dll</PackagePath>
-      <Modified>2018-03-02T13:16:55.230</Modified>
+      <Modified>2018-03-15T23:12:45.170</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\Entities\bin\x86\Debug\Entities.dll">
       <PackagePath>Entities.dll</PackagePath>
-      <Modified>2018-03-01T09:43:56.220</Modified>
+      <Modified>2018-03-15T23:12:42.778</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\Capa-BL\bin\x86\Debug\Capa-DAL.dll">
       <PackagePath>Capa-DAL.dll</PackagePath>
-      <Modified>2018-03-02T13:16:54.038</Modified>
+      <Modified>2018-03-15T23:12:44.498</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\A.gif">
       <PackagePath>Assets\Images\A.gif</PackagePath>
-      <Modified>2018-02-09T13:03:57.124</Modified>
+      <Modified>2018-03-15T22:38:34.417</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien1.gif">
       <PackagePath>Assets\Images\Alien1.gif</PackagePath>
-      <Modified>2018-02-05T12:51:09.872</Modified>
+      <Modified>2018-03-15T22:38:34.421</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien2.gif">
       <PackagePath>Assets\Images\Alien2.gif</PackagePath>
-      <Modified>2018-02-09T13:04:27.118</Modified>
+      <Modified>2018-03-15T22:38:34.424</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien3.gif">
       <PackagePath>Assets\Images\Alien3.gif</PackagePath>
-      <Modified>2018-02-09T13:04:27.133</Modified>
+      <Modified>2018-03-15T22:38:34.430</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\D.gif">
       <PackagePath>Assets\Images\D.gif</PackagePath>
-      <Modified>2018-02-09T13:03:57.139</Modified>
+      <Modified>2018-03-15T22:38:34.434</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\explosion.gif">
       <PackagePath>Assets\Images\explosion.gif</PackagePath>
-      <Modified>2018-02-05T12:57:09.164</Modified>
+      <Modified>2018-03-15T22:38:34.446</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\ExplosionMeteorito.gif">
       <PackagePath>Assets\Images\ExplosionMeteorito.gif</PackagePath>
-      <Modified>2018-02-19T13:21:10.992</Modified>
+      <Modified>2018-03-15T22:38:34.439</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\ExplosionMeteorito2.gif">
       <PackagePath>Assets\Images\ExplosionMeteorito2.gif</PackagePath>
-      <Modified>2018-02-19T13:25:05.587</Modified>
+      <Modified>2018-03-15T22:38:34.441</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\ExplosionMisil.gif">
       <PackagePath>Assets\Images\ExplosionMisil.gif</PackagePath>
-      <Modified>2018-02-15T09:00:29.513</Modified>
+      <Modified>2018-03-15T22:38:34.443</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\M.gif">
       <PackagePath>Assets\Images\M.gif</PackagePath>
-      <Modified>2018-02-09T13:03:57.155</Modified>
+      <Modified>2018-03-15T22:38:34.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Crosshair2.png">
       <PackagePath>Assets\Images\Crosshair2.png</PackagePath>
-      <Modified>2018-03-01T09:26:06.420</Modified>
+      <Modified>2018-03-15T22:38:34.433</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Defend.png">
       <PackagePath>Assets\Images\Defend.png</PackagePath>
-      <Modified>2018-02-16T12:18:29.813</Modified>
+      <Modified>2018-03-15T22:38:34.435</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\DefendRota.png">
       <PackagePath>Assets\Images\DefendRota.png</PackagePath>
-      <Modified>2018-02-19T12:53:16.579</Modified>
+      <Modified>2018-03-15T22:38:34.437</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Exit.png">
       <PackagePath>Assets\Images\Exit.png</PackagePath>
-      <Modified>2018-03-02T13:16:35.663</Modified>
+      <Modified>2018-03-15T22:38:34.437</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\FlechaDer.png">
       <PackagePath>Assets\Images\FlechaDer.png</PackagePath>
-      <Modified>2018-03-01T09:20:38.874</Modified>
+      <Modified>2018-03-15T22:38:34.446</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\FlechaIzq.png">
       <PackagePath>Assets\Images\FlechaIzq.png</PackagePath>
-      <Modified>2018-03-01T09:20:38.892</Modified>
+      <Modified>2018-03-15T22:38:34.446</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\MisilEnemigoPro.png">
       <PackagePath>Assets\Images\MisilEnemigoPro.png</PackagePath>
-      <Modified>2018-02-15T08:46:02.193</Modified>
+      <Modified>2018-03-15T22:38:34.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Pausa.png">
       <PackagePath>Assets\Images\Pausa.png</PackagePath>
-      <Modified>2018-02-22T10:47:22.295</Modified>
+      <Modified>2018-03-15T22:38:34.454</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Restart.png">
       <PackagePath>Assets\Images\Restart.png</PackagePath>
-      <Modified>2018-03-01T11:47:06.859</Modified>
+      <Modified>2018-03-15T22:38:34.454</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Resume.png">
       <PackagePath>Assets\Images\Resume.png</PackagePath>
-      <Modified>2018-03-01T11:47:06.870</Modified>
+      <Modified>2018-03-15T22:38:34.456</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.237</Modified>
+      <Modified>2018-03-15T22:38:34.458</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.267</Modified>
+      <Modified>2018-03-15T22:38:34.458</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.307</Modified>
+      <Modified>2018-03-15T22:38:34.463</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.371</Modified>
+      <Modified>2018-03-15T22:38:34.464</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.571</Modified>
+      <Modified>2018-03-15T22:38:34.461</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien1Pro.png">
       <PackagePath>Assets\Images\Alien1Pro.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.016</Modified>
+      <Modified>2018-03-15T22:38:34.422</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien2Pro.png">
       <PackagePath>Assets\Images\Alien2Pro.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.018</Modified>
+      <Modified>2018-03-15T22:38:34.425</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Alien3Pro.png">
       <PackagePath>Assets\Images\Alien3Pro.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.021</Modified>
+      <Modified>2018-03-15T22:38:34.430</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\AlienNavePro.png">
       <PackagePath>Assets\Images\AlienNavePro.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.024</Modified>
+      <Modified>2018-03-15T22:38:34.432</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\continue.png">
       <PackagePath>Assets\Images\continue.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.027</Modified>
+      <Modified>2018-03-15T22:38:34.435</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Logo Inicio Sapce Invaders.png">
       <PackagePath>Assets\Images\Logo Inicio Sapce Invaders.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.033</Modified>
+      <Modified>2018-03-15T22:38:34.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\MisilPro.png">
       <PackagePath>Assets\Images\MisilPro.png</PackagePath>
-      <Modified>2018-01-29T07:48:57.632</Modified>
+      <Modified>2018-03-15T22:38:34.453</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\options.png">
       <PackagePath>Assets\Images\options.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.036</Modified>
+      <Modified>2018-03-15T22:38:34.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\play.png">
       <PackagePath>Assets\Images\play.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.038</Modified>
+      <Modified>2018-03-15T22:38:34.455</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\PlayerPro.png">
       <PackagePath>Assets\Images\PlayerPro.png</PackagePath>
-      <Modified>2018-02-01T11:11:56.103</Modified>
+      <Modified>2018-03-15T22:38:34.458</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\scores.png">
       <PackagePath>Assets\Images\scores.png</PackagePath>
-      <Modified>2018-01-25T09:51:32.012</Modified>
+      <Modified>2018-03-15T22:38:34.457</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.816</Modified>
+      <Modified>2018-03-15T22:38:34.475</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.829</Modified>
+      <Modified>2018-03-15T22:38:34.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.842</Modified>
+      <Modified>2018-03-15T22:38:34.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.860</Modified>
+      <Modified>2018-03-15T22:38:34.479</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.883</Modified>
+      <Modified>2018-03-15T22:38:34.481</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:19:24.052</Modified>
+      <Modified>2018-03-15T22:38:34.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:19:24.110</Modified>
+      <Modified>2018-03-15T22:38:34.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:19:24.195</Modified>
+      <Modified>2018-03-15T22:38:34.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:19:24.808</Modified>
+      <Modified>2018-03-15T22:38:34.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.906</Modified>
+      <Modified>2018-03-15T22:38:34.488</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.922</Modified>
+      <Modified>2018-03-15T22:38:34.488</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.939</Modified>
+      <Modified>2018-03-15T22:38:34.488</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.018</Modified>
+      <Modified>2018-03-15T22:38:34.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.704</Modified>
+      <Modified>2018-03-15T22:38:34.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.758</Modified>
+      <Modified>2018-03-15T22:38:34.496</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.724</Modified>
+      <Modified>2018-03-15T22:38:34.501</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.735</Modified>
+      <Modified>2018-03-15T22:38:34.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.582</Modified>
+      <Modified>2018-03-15T22:38:34.498</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.593</Modified>
+      <Modified>2018-03-15T22:38:34.498</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.604</Modified>
+      <Modified>2018-03-15T22:38:34.500</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.630</Modified>
+      <Modified>2018-03-15T22:38:34.503</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.641</Modified>
+      <Modified>2018-03-15T22:38:34.502</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.651</Modified>
+      <Modified>2018-03-15T22:38:34.504</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.694</Modified>
+      <Modified>2018-03-15T22:38:34.505</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.662</Modified>
+      <Modified>2018-03-15T22:38:34.505</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.672</Modified>
+      <Modified>2018-03-15T22:38:34.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:50.412</Modified>
+      <Modified>2018-03-15T22:38:34.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:50.423</Modified>
+      <Modified>2018-03-15T22:38:34.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:50.435</Modified>
+      <Modified>2018-03-15T22:38:34.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:50.448</Modified>
+      <Modified>2018-03-15T22:38:34.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:50.466</Modified>
+      <Modified>2018-03-15T22:38:34.536</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.034</Modified>
+      <Modified>2018-03-15T22:38:34.543</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.054</Modified>
+      <Modified>2018-03-15T22:38:34.517</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.077</Modified>
+      <Modified>2018-03-15T22:38:34.519</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.214</Modified>
+      <Modified>2018-03-15T22:38:34.522</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2017-12-01T11:14:09.303</Modified>
+      <Modified>2018-03-15T22:38:34.463</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:19:24.323</Modified>
+      <Modified>2018-03-15T22:38:34.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:48.961</Modified>
+      <Modified>2018-03-15T22:38:34.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.615</Modified>
+      <Modified>2018-03-15T22:38:34.500</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.714</Modified>
+      <Modified>2018-03-15T22:38:34.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-01T09:16:49.112</Modified>
+      <Modified>2018-03-15T22:38:34.521</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Music\disparo.wav">
       <PackagePath>Assets\Music\disparo.wav</PackagePath>
-      <Modified>2018-02-22T09:17:05.529</Modified>
+      <Modified>2018-03-15T22:38:34.466</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Music\explosion.mp3">
       <PackagePath>Assets\Music\explosion.mp3</PackagePath>
-      <Modified>2018-02-22T09:17:03.669</Modified>
+      <Modified>2018-03-15T22:38:34.473</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Music\romperroca.mp3">
       <PackagePath>Assets\Music\romperroca.mp3</PackagePath>
-      <Modified>2018-02-22T11:15:38.533</Modified>
+      <Modified>2018-03-15T22:38:34.480</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Music\tetris.mp3">
       <PackagePath>Assets\Music\tetris.mp3</PackagePath>
-      <Modified>2018-02-22T09:17:05.482</Modified>
+      <Modified>2018-03-15T22:38:34.591</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Pixel_Emulator.ttf">
       <PackagePath>Assets\Pixel_Emulator.ttf</PackagePath>
-      <Modified>2018-02-01T11:07:27.692</Modified>
+      <Modified>2018-03-15T22:38:34.472</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Assets\Images\Fondo Space Invaders.jpg">
       <PackagePath>Assets\Images\Fondo Space Invaders.jpg</PackagePath>
-      <Modified>2018-01-25T09:51:32.030</Modified>
+      <Modified>2018-03-15T22:38:34.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-01-25T09:49:15.838</Modified>
+      <Modified>2018-03-15T22:38:59.919</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\SpaceInvaders.xr.xml">
       <PackagePath>SpaceInvaders.xr.xml</PackagePath>
-      <Modified>2018-03-01T11:37:52.532</Modified>
+      <Modified>2018-03-15T22:38:59.780</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
+    <AppxPackagedFile Include="C:\Program Files\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-09-28T16:28:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-05T12:30:59.285</Modified>
+      <Modified>2018-03-15T23:13:09.057</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\icastillo\Desktop\GitHub\GalaxyInvaders\GalaxyInvaders\SpaceInvaders\bin\x86\Debug\Core\SpaceInvaders.exe">
       <PackagePath>SpaceInvaders.exe</PackagePath>
-      <Modified>2018-03-05T12:30:59.894</Modified>
+      <Modified>2018-03-15T23:13:09.291</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
@@ -1138,39 +1138,30 @@
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+    <ResolvedSDKReference Include="C:\Program Files\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.25547.0</Version>
+      <Version>14.0.26128.0</Version>
       <Architecture>ARM</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25547.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26128.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+    <ResolvedSDKReference Include="C:\Program Files\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.25547.0</Version>
-      <Architecture>ARM64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25547.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.appx</AppxLocation>
-      <MoreInfo>
-      </MoreInfo>
-    </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
-      <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.25547.0</Version>
+      <Version>14.0.26128.0</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25547.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26128.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+    <ResolvedSDKReference Include="C:\Program Files\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.25547.0</Version>
+      <Version>14.0.26128.0</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25547.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26128.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
